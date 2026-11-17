@@ -1,0 +1,17 @@
+# Build output (publish the .exe through GitHub Releases, not git)
+/OpenUninstaller.exe
+*.exe
+
+# Runtime data: may contain personal paths, installed-program lists, and registry exports
+data/*
+!data/.gitkeep
+
+# Optional user-supplied databases and misc
+*.rupldb
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.log
+node_modules/
+.DS_Store
+Thumbs.db

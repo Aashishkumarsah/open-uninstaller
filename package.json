@@ -1,0 +1,26 @@
+{
+  "name": "open-uninstaller",
+  "version": "0.6.0",
+  "description": "Free, open-source Windows uninstaller and leftover cleaner: native WinForms app plus a Node.js/PowerShell CLI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aashishkumarsah/open-uninstaller.git"
+  },
+  "homepage": "https://github.com/Aashishkumarsah/open-uninstaller#readme",
+  "bugs": {
+    "url": "https://github.com/Aashishkumarsah/open-uninstaller/issues"
+  },
+  "type": "commonjs",
+  "bin": { "ou": "bin/ou.js" },
+  "scripts": {
+    "test": "node --test tests/",
+    "check": "node --check bin/ou.js && node --check ui/app.js",
+    "build": "build-native.cmd",
+    "list": "node bin/ou.js list",
+    "history": "node bin/ou.js history"
+  },
+  "engines": { "node": ">=22.5.0" },
+  "os": ["win32"],
+  "keywords": ["windows", "uninstaller", "cleaner", "registry", "winforms", "powershell"]
+}

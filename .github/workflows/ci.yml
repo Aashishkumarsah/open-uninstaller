@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Syntax check
+        run: npm run check
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build desktop app
+        shell: cmd
+        run: build-native.cmd
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: OpenUninstaller-windows
+          path: |
+            OpenUninstaller.exe
+            src/
+            bin/
+            ui/
+            LICENSE
+            README.md
