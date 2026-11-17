@@ -14,7 +14,7 @@
   "type": "commonjs",
   "bin": { "ou": "bin/ou.js" },
   "scripts": {
-    "test": "node --test tests/",
+    "test": "node --test",
     "check": "node --check bin/ou.js && node --check ui/app.js",
     "build": "build-native.cmd",
     "list": "node bin/ou.js list",
